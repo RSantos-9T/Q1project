@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Wings</title>
+    <style>  
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            background-color: #1983FC;
+            overflow: hidden;
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            z-index: 1000; 
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 17px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: black;
+            color: black;
+        }
+
+        .home-button {
+            background-color: #1983FC; 
+            color: white; 
+        }
+
+        .home-button:hover {
+            background-color: #C70039; /* Hover color for Home button */
+            color: white; /* Maintain text color */
+        }
+
+        .navbar img {
+            float: right;
+            height: 50px; 
+            margin-right: 20px; 
+        }
+
+        body {
+            padding-top: 50px;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .hero-content button {
+            margin-top: 20px;
+            background-color: #001f52;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .hero-content button:hover {
+            background-color: #005bb5;
+        }
+
+        .innovation-section {
+            text-align: center;
+            padding: 40px;
+            background-color: #f4f4f4;
+            color: white;
+        }
+
+        .innovation-section h2 {
+            font-size: 36px;
+            color: #1983FC;
+        }
+
+        .innovation-section p {
+            font-size: 18px;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .aboutus {
+            padding: 20px;
+        }
+
+        .innovation-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+
+        .innovation-text {
+            flex: 1;
+            padding: 20px;
+            color: #333;
+        }
+
+        .innovation-text h2 {
+            font-size: 32px;
+            color: #004080;
+        }
+
+        .innovation-text p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .innovation-text a {
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .innovation-text a:hover {
+            text-decoration: underline;
+        }
+
+        .innovation-image {
+            flex: 1;
+            background-image: url('https://wallpaperaccess.com/full/4598734.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .innovation-container {
+                flex-direction: column;
+            }
+            .innovation-image {
+                height: 300px;
+            }
+        }
+
+        .feature-container {
+            display: flex;
+            align-items: center;
+            padding: 50px;
+            background-color: #f5f5f5;
+        }
+
+        .feature-text {
+            max-width: 500px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-text h2 {
+            font-size: 28px;
+            color: #1a2e5d;
+        }
+
+        .feature-text p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .feature-text a {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #1a2e5d;
+            font-weight: bold;
+        }
+
+        .feature-text a:hover {
+            text-decoration: underline;
+        }
+
+        .feature-image img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .feature-container {
+                flex-direction: column;
+            }
+
+            .feature-text {
+                max-width: 100%;
+            }
+
+            .feature-image img {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <a href="file:///C:/Users/ramon/OneDrive/Desktop/sus%20files/ict%202425/ICT9_GH_9TOPAZ_PROJECT_SANTOS_RAMON.html" class="home-button"> <a href="">  Home </a> </a>
+        <a href="#about">Careers</a>
+        <a href="file:///C:/Users/ramon/OneDrive/Desktop/sus%20files/ict%202425/Products.html">Stock</a>
+        <a href="#contact">Contact Us</a>
+        <!-- Company logo on the right side -->
+        <img src="https://th.bing.com/th/id/R.f3f552828d4a4cf5abfb02808dd74484?rik=53Jfn6VQxtV13Q&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fsilhouette-of-an-airplane%2fsilhouette-of-an-airplane-6.png&ehk=U%2bs1lqNJ5ocmyy%2fcD%2fljHQK%2b4cFA8dMhuHtYeTPUa78%3d&risl=&pid=ImgRaw&r=0" alt="Company Logo">
+    </div>
+
+    <!-- Hero Section with Video Background -->
+    <div class="hero">
+        <iframe width="100%" height="100%" 
+            src="https://www.youtube.com/embed/caU4Vh8wH7U?autoplay=1&mute=1&loop=1&playlist=caU4Vh8wH7U&controls=0&showinfo=0&modestbranding=1&fs=0&iv_load_policy=3&rel=0" 
+            frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+        </iframe>
+
+        <!-- Centered Content over Video -->
+        <div class="hero-content">
+            <font color="black">
+                <h1>Empowering Aviation Through Pre-Owned Excellence</h1>
+            </font>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- About Us Section -->
+    <div class="aboutus">
+        <font size="6"> <h2>About Us</h2> </font>
+        <p>
+            
+        </p>
+    </div>
+
+    <!-- Innovation Section -->
+    <div class="innovation-container">
+        <div class="innovation-text">
+            <h2>Fast and Affordable Aviation Solutions</h2>
+            <p>Legacy Wings is committed to providing pre-owned aircraft that offer exceptional value and efficiency. Our planes are fully inspected and ready for immediate use, eliminating the delays associated with purchasing brand-new aircraft.</p>
+        </div>
+        <div class="innovation-image">
+            <!-- Background image will be displayed here -->
+        </div>
+    </div>
+
+    <!-- Flight Display Section -->
+    <div class="feature-container">
+        <div class="feature-image">
+            <img src="https://50skyshades.com/images/l/bizav-groups-back-icao-recommended-co2-standard-6613-0DZVgIgjC1wANA5GjKakaFWSf.jpg" alt="Bombardier in the sunset">
+        </div>
+        <div class="feature-text">
+            <h2>Check out what we have!</h2>
+            <p>Our planes come from renowned manufacturers such as Bombardier, Airbus, and <del> Boeing </del> , offering world-class performance, reliability, and comfort. Whether you need a small business jet or a large commercial aircraft, we have a range of pre-owned aircraft ready to meet your needs. Every aircraft is thoroughly inspected to ensure it meets our high standards of safety and quality.</p>
+            Explore our products below!
+        </div>
+    </div>  
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Wings Careers</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .skyline-nav {
+            background-color: #1983FC;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .skyline-nav a {
+            float: left;
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 17px 16px;
+            text-decoration: none;
+        }
+
+        .skyline-nav a:hover {
+            background-color: black;
+            color: black;
+        }
+
+        .landing-button {
+            background-color: #1983FC;
+            color: white;
+        }
+
+        .landing-button:hover {
+            background-color: #C70039; /* Hover color for Home button */
+            color: white; /* Maintain text color */
+        }
+
+        .skyline-nav img {
+            float: right;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        body {
+            padding-top: 50px;
+        }
+
+        .takeoff-banner {
+            position: relative;
+            height: 50vh; /* Keeps the height */
+            background-image: url('https://www.airlinereporter.com/wp-content/uploads/2015/12/image1.jpg');
+            background-size: cover; /* Ensures the image covers the entire area */
+            background-position: center; /* Centers the background image */
+            overflow: hidden;
+        }
+
+        .banner-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .banner-message h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .banner-message button {
+            margin-top: 20px;
+            background-color: #001f52;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .banner-message button:hover {
+            background-color: #005bb5;
+        }
+
+        .aboutus {
+            padding: 20px;
+        }
+
+        .future-flight {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+
+        .aircraft-insight {
+            flex: 1;
+            padding: 20px;
+            color: #333;
+        }
+
+        .aircraft-insight h2 {
+            font-size: 32px;
+            color: #004080;
+        }
+
+        .aircraft-insight p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .aircraft-insight a {
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .aircraft-insight a:hover {
+            text-decoration: underline;
+        }
+
+        .jet-preview {
+            flex: 1;
+            background-image: url('https://www.pilotcareernews.com/wp-content/uploads/2017/07/SPA-pilots-in-a-cockpit.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .future-flight {
+                flex-direction: column;
+            }
+
+            .jet-preview {
+                height: 300px;
+            }
+        }
+
+        .aircraft-spotlight {
+            display: flex;
+            align-items: center;
+            padding: 50px;
+            background-color: #f5f5f5;
+        }
+
+        .fleet-details {
+            max-width: 500px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .fleet-details h2 {
+            font-size: 28px;
+            color: #1a2e5d;
+        }
+
+        .fleet-details p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .fleet-details a {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #1a2e5d;
+            font-weight: bold;
+        }
+
+        .fleet-details a:hover {
+            text-decoration: underline;
+        }
+
+        .plane-glimpse img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .aircraft-spotlight {
+                flex-direction: column;
+            }
+
+            .fleet-details {
+                max-width: 100%;
+            }
+
+            .plane-glimpse img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <div class="skyline-nav">
+        <a href="file:///C:/Users/ramon/OneDrive/Desktop/sus%20files/ict%202425/ICT9_GH_9TOPAZ_PROJECT_SANTOS_RAMON.html" class="landing-button">Home</a>
+        <a href="#about">Careers</a>
+        <a href="file:///C:/Users/ramon/OneDrive/Desktop/sus%20files/ict%202425/Products.html">Stock</a>
+        <a href="#contact">Contact Us</a>
+        <img src="https://th.bing.com/th/id/R.f3f552828d4a4cf5abfb02808dd74484?rik=53Jfn6VQxtV13Q&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fsilhouette-of-an-airplane%2fsilhouette-of-an-airplane-6.png&ehk=U%2bs1lqNJ5ocmyy%2fcD%2fljHQK%2b4cFA8dMhuHtYeTPUa78%3d&risl=&pid=ImgRaw&r=0" alt="Company Logo">
+    </div>
+
+    <!-- Hero Section with Background Image -->
+    <div class="takeoff-banner">
+        <!-- Centered Content over Background -->
+        <div class="banner-message">
+            <font color="black">
+                <h1>Careers</h1>
+            </font>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- About Us Section -->
+    <div class="aboutus">
+        <font size="6">
+            <h2>Stock</h2>
+        </font>
+        <p></p>
+    </div>
+
+    <!-- Innovation Section -->
+    <div class="future-flight">
+        <div class="aircraft-insight">
+            <h2>Pilot</h2>
+            <p>Requirements:
+<br>
+1. Earn an FAA-approved bachelor's degree ...
+<br>
+2. Obtain a private pilot license ...
+<br>
+3. Acquire an instrument rating ...
+<br>
+4. Obtain a commercial pilot license ...
+<br>
+5. Get a flight instructor certificate ...
+<br>
+6. Add a multi-engine rating ...
+<br>
+7. Gain experience and flight hours ...
+<br>
+8. Earn an airline transport pilot certification ...</p>
+            <br>
+            <p><a href="https://atpflightschool.com/become-a-pilot/airline-career/airline-pilot-requirements.html">More Info</a></p>
+        </div>
+        <div class="jet-preview">
+            <!-- Background image will be displayed here -->
+        </div>
+    </div>
+
+    <!-- Flight Display Section -->
+    <div class="aircraft-spotlight">
+        <div class="plane-glimpse">
+            <img src="https://th.bing.com/th/id/OIP.Y0GUie7erEZ9ImtfiuFYPQHaE9?rs=1&pid=ImgDetMain" alt="Bombardier in the sunset">
+        </div>
+        <div class="fleet-details">
+            <h2>Aircraft Engineer</h2>
+            <p>Requirements:
+            <br>
+            Earn a bachelor's degree in Aerospace Engineering, Mechanical Engineering or a related field.
+            </p>
+            <a href="https://en.wikipedia.org/wiki/Airbus_A340#Stretch:_-500/-600_variants">Explore our inventory</a>
+        </div>
+    </div>
+
+    <!-- Comment Section -->
+    <div style="padding: 40px; text-align: center; background-color: #f4f4f4;">
+        <h2>What aircraft would you like to see?</h2>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Wings Products</title>
+    <style>  
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            background-color: #1983FC;
+            overflow: hidden;
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            z-index: 1000; 
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 17px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: black;
+            color: black;
+        }
+
+        .home-button {
+            background-color: #1983FC; 
+            color: white; 
+        }
+
+        .home-button:hover {
+            background-color: #C70039; /* Hover color for Home button */
+            color: white; /* Maintain text color */
+        }
+
+        .navbar img {
+            float: right;
+            height: 50px; 
+            margin-right: 20px; 
+        }
+
+        body {
+            padding-top: 50px;
+        }
+
+        .hero {
+            position: relative;
+            height: 50vh; /* Keeps the height */
+            background-image: url('https://thepointsguy.global.ssl.fastly.net/us/originals/2020/12/GettyImages-156335375-scaled.jpg?width=1920'); /* Add your background image */
+            background-size: cover; /* Ensures the image covers the entire area */
+            background-position: center; /* Centers the background image */
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .hero-content button {
+            margin-top: 20px;
+            background-color: #001f52;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .hero-content button:hover {
+            background-color: #005bb5;
+        }
+
+        .innovation-section {
+            text-align: center;
+            padding: 40px;
+            background-color: #f4f4f4;
+            color: white;
+        }
+
+        .innovation-section h2 {
+            font-size: 36px;
+            color: #1983FC;
+        } 
+
+        .innovation-section p {
+            font-size: 18px;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .aboutus {
+            padding: 20px;
+        }
+
+        .innovation-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+
+        .innovation-text {
+            flex: 1;
+            padding: 20px;
+            color: #333;
+        }
+
+        .innovation-text h2 {
+            font-size: 32px;
+            color: #004080;
+        }
+
+        .innovation-text p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .innovation-text a {
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .innovation-text a:hover {
+            text-decoration: underline;
+        }
+
+        .innovation-image {
+            flex: 1;
+            background-image: url('https://i.pinimg.com/originals/b9/b8/1b/b9b81bb542c17ad6a1f75d4240858d7c.png');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .innovation-container {
+                flex-direction: column;
+            }
+            .innovation-image {
+                height: 300px;
+            }
+        }
+
+        .feature-container {
+            display: flex;
+            align-items: center;
+            padding: 50px;
+            background-color: #f5f5f5;
+        }
+
+        .feature-text {
+            max-width: 500px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-text h2 {
+            font-size: 28px;
+            color: #1a2e5d;
+        }
+
+        .feature-text p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .feature-text a {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #1a2e5d;
+            font-weight: bold;
+        }
+
+        .feature-text a:hover {
+            text-decoration: underline;
+        }
+
+        .feature-image img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .feature-container {
+                flex-direction: column;
+            }
+
+            .feature-text {
+                max-width: 100%;
+            }
+
+            .feature-image img {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <a href="#home" class="home-button"> <a href="file:///C:/Users/ramon/OneDrive/Desktop/sus%20files/ict%202425/ICT9_GH_9TOPAZ_PROJECT_SANTOS_RAMON.html">  Home </a> </a>
+        <a href="#about">Careers</a>
+        <a href="file:///C:/Users/ramon/OneDrive/Desktop/sus%20files/ict%202425/Products.html">Stock</a>
+        <a href="#contact">Contact Us</a>
+        <!-- Company logo on the right side -->
+        <img src="https://th.bing.com/th/id/R.f3f552828d4a4cf5abfb02808dd74484?rik=53Jfn6VQxtV13Q&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fsilhouette-of-an-airplane%2fsilhouette-of-an-airplane-6.png&ehk=U%2bs1lqNJ5ocmyy%2fcD%2fljHQK%2b4cFA8dMhuHtYeTPUa78%3d&risl=&pid=ImgRaw&r=0" alt="Company Logo">
+    </div>
+
+    <!-- Hero Section with Background Image -->
+    <div class="hero">
+        <!-- Centered Content over Background -->
+        <div class="hero-content">
+            <font color="black">
+                <h1>Products</h1>
+            </font>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- About Us Section -->
+    <div class="aboutus">
+        <font size="6"> <h2>Stock</h2> </font>
+        <p>
+            
+        </p>
+    </div>
+
+    <!-- Innovation Section -->
+    <div class="innovation-container">
+        <div class="innovation-text">
+            <h2>Boeing 737-800 (IATA CODE: N36272) </h2>
+            <p> 
+This Boeing 737-800 (IATA Code: N36272), previously operated by United Airlines, has been in service for 14 years, from 2009 to 2023. Over its operational lifetime, it accumulated 35,000 flight hours and completed 14,500 flight cycles. The aircraft was maintained to FAA Part 121 standards, ensuring top-notch performance and reliability. It underwent its last major overhaul, a C-check, in 2022, making it ready for continued service. This aircraft's combination of performance, regular maintenance, and well-documented history makes it a reliable and cost-effective choice for future operators. </p>
+<br>
+<p>  <a href="https://en.wikipedia.org/wiki/Boeing_737_Next_Generation#Design"> More Info </a> </p>
+        </div>
+        <div class="innovation-image">
+            <!-- Background image will be displayed here -->
+        </div>
+    </div>
+
+    <!-- Flight Display Section -->
+    <div class="feature-container">
+        <div class="feature-image">
+            <img src="https://wallpapercave.com/wp/wp6957329.jpg" alt="Bombardier in the sunset">
+        </div>
+        <div class="feature-text">
+            <h2> Airbus A340-300 (IATA CODE: HB-JMK) </h2>
+            <p>The Airbus A340-300 with IATA code HB-JMK was part of Swiss International Air Lines' fleet, serving in long-haul operations for nearly two decades. Originally delivered to Swissair, the aircraft continued its service after the airline's transition to SWISS. Known for its range and comfort, the A340-300 was used on intercontinental routes connecting Europe to destinations in North America, Asia, and Africa. The aircraft had a maximum capacity of around 270 passengers and was appreciated for its spacious cabin layout.   </p>
+            <a href="https://en.wikipedia.org/wiki/Airbus_A340#Stretch:_-500/-600_variants">Explore our inventory</a>
+        </div>
+    </div>
+
+<!-- Comment Section -->
+<div style="padding: 40px; text-align: center; background-color: #f4f4f4;">
+    <h2>What aircraft would you like to see?</h2>
+    <form>
+        <label for="aircraft-comment">Let us know which aircraft you'd like to see in our inventory:</label><br><br>
+        <textarea id="aircraft-comment" name="aircraft-comment" rows="5" cols="50" placeholder="Enter aircraft type or model"></textarea><br><br>
+        <input type="submit" value="Submit" style="background-color: #001f52; color: white; padding: 10px 20px; border: none; cursor: pointer;">
+    </form>
+</div>
+
+
+</body>
+</html>
